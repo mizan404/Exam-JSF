@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"></link>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    </h:head>
+    <h:body>
+        <div class="row justify-content-center align-items-center">
+            <h1>Save Data</h1>    
+        </div>
+        <hr/>
+        <div class="row justify-content-center align-items-center">
+
+            <h:form>
+                <table>
+                    <tr>
+                        <td>
+                            Name: 
+                        </td>
+                        <td>
+                            <h:inputText value="#{studentContrioller.student.name}" size="35"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Round: 
+                        </td>
+                        <td>
+                            <h:inputText value="#{studentContrioller.student.round}" size="35"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Language:  
+                        </td>
+                        <td>
+                            <h:selectOneMenu value="#{studentContrioller.student.language}" >
+                                <f:selectItem itemValue="Null" itemLabel="Select A Language"/>
+                                <f:selectItem itemValue="JAVA" itemLabel="JAVA"/>
+                                <f:selectItem itemValue="C#" itemLabel="C#"/>
+                                <f:selectItem itemValue="PHP" itemLabel="PHP"/>
+                            </h:selectOneMenu>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Education:  
+                        </td>
+                        <td >
+                            <h:selectManyCheckbox value="#{studentContrioller.education}" >
+                                <f:selectItem itemValue="SSC" itemLabel="SSC"/>
+                                <f:selectItem itemValue="HSC" itemLabel="HSC"/>
+                                <f:selectItem itemValue="BBA" itemLabel="BBA"/>
+                                <f:selectItem itemValue="MBA" itemLabel="MBA"/>
+                            </h:selectManyCheckbox>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <h:commandButton value="Save" action="#{studentContrioller.saveStudent()}" class="btn btn-success"/>
+
+                            <h:outputText value="#{studentContrioller.result}"/>
+
+
+                        </td>
+                    </tr>
+
+                </table>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
