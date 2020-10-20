@@ -62,6 +62,30 @@
 
                         </td>
                     </tr>
+
+                    <tr>
+                        <td>
+                            Remark:  
+                        </td>
+                        <td >
+                            <h:inputTextarea value="#{studentContrioller.student.remark}" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Location:  
+                        </td>
+                        <td >
+                            <h:selectOneRadio value="#{studentContrioller.student.location}">
+                                <f:selectItem itemValue="Dhaka" itemLabel="Dhaka"/>
+                                <f:selectItem itemValue="Khulna" itemLabel="Khulna"/>
+                                <f:selectItem itemValue="Sylhet" itemLabel="Sylhet"/>
+                                <f:selectItem itemValue="Rajshahi" itemLabel="Rajshahi"/>
+                            </h:selectOneRadio>
+
+                        </td>
+                    </tr>
                     <tr>
                         <td>
 
@@ -74,6 +98,7 @@
 
                         </td>
                     </tr>
+
 
                 </table>
             </h:form>

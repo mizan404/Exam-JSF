@@ -69,6 +69,30 @@
                                 <f:selectItem itemValue="BBA" itemLabel="BBA"/>
                                 <f:selectItem itemValue="MBA" itemLabel="MBA"/>
                             </h:selectManyCheckbox>
+                        <!--<h:inputText value="#{studentContrioller.student.education}"/>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Remark:  
+                        </td>
+                        <td >
+                            <h:inputTextarea value="#{studentContrioller.student.remark}"/>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Location:  
+                        </td>
+                        <td >
+                            <h:selectOneRadio value="#{studentContrioller.student.location}">
+                                <f:selectItem itemValue="Dhaka" itemLabel="Dhaka"/>
+                                <f:selectItem itemValue="Khulna" itemLabel="Khulna"/>
+                                <f:selectItem itemValue="Sylhet" itemLabel="Sylhet"/>
+                                <f:selectItem itemValue="Rajshahi" itemLabel="Rajshahi"/>
+                            </h:selectOneRadio>
+
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +100,8 @@
 
                         </td>
                         <td>
-                            <h:commandButton action="#{studentContrioller.updateStudent()}" value="Update" class="btn btn-primary"/>
+                            <h:commandButton action="#{studentContrioller.updateStudent()}" value="Update" class="btn btn-primary" onclick="if (!confirm('Are you sure you want to delete this student?'))
+                                        return false"/>
 
                             <h:outputText value="#{studentContrioller.result}"/>
 
@@ -86,7 +111,7 @@
             </h:form>
         </div>
         <hr/>
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center" >
             <!--Display Data-->
             <h:form>
                 <table >
@@ -133,15 +158,33 @@
                         </tr>
                         <tr>
                             <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Remark</f:facet>
+                                        #{student1.remark}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Location</f:facet>
+                                        #{student1.location}
+                                </h:column>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
                                 <h:column>
                                     <f:facet name="header">Select for Update</f:facet>
-                                    <h:commandButton action="#{studentContrioller.displayUpdate(student1.id)}" value="Select for Update" class="btn btn-primary"/>
+                                    <h:commandButton action="#{studentContrioller.displayUpdate(student1.id)}" value="Select for Update" class="btn btn-primary" />
                                 </h:column>
                             </td>
                             <td>
                                 <h:column>
                                     <f:facet name="header">Delete</f:facet>
-                                    <h:commandButton action="#{studentContrioller.delete(student1.id)}" value="Delete" class="btn btn-danger"/>
+                                    <h:commandButton action="#{studentContrioller.delete(student1.id)}" onclick="if (!confirm('Are you sure you want to delete this student?'))
+                                                return false" value="Delete" class="btn btn-danger"/>
 
                                 </h:column>
                             </td>

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "student1")
+@Table(name = "student2")
 public class Student {
 
     @Id
@@ -17,6 +17,8 @@ public class Student {
     private String round;
     private String language;
     private String education;
+    private String remark;
+    private String location;
 
     public Student() {
     }
@@ -25,11 +27,13 @@ public class Student {
         this.id = id;
     }
 
-    public Student(String name, String round, String language, String education) {
+    public Student(String name, String round, String language, String education, String remark, String location) {
         this.name = name;
         this.round = round;
         this.language = language;
         this.education = education;
+        this.remark = remark;
+        this.location = location;
     }
 
     public Integer getId() {
@@ -72,9 +76,25 @@ public class Student {
         this.education = education;
     }
 
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     @Override
     public String toString() {
-        return "Student{" + "id=" + id + ", name=" + name + ", round=" + round + ", language=" + language + ", education=" + education + '}';
+        return "Student{" + "id=" + id + ", name=" + name + ", round=" + round + ", language=" + language + ", education=" + education + ", remark=" + remark + ", location=" + location + '}';
     }
 
 }
