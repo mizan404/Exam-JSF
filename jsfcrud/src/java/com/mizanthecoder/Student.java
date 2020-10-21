@@ -7,18 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "student2")
+@Table(name = "student")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String name;
-    private String round;
-    private String language;
-    private String education;
-    private String remark;
-    private String location;
+    private String username;
+    private String password;
+    private String contact;
 
     public Student() {
     }
@@ -27,13 +24,10 @@ public class Student {
         this.id = id;
     }
 
-    public Student(String name, String round, String language, String education, String remark, String location) {
-        this.name = name;
-        this.round = round;
-        this.language = language;
-        this.education = education;
-        this.remark = remark;
-        this.location = location;
+    public Student(String username, String password, String contact) {
+        this.username = username;
+        this.password = password;
+        this.contact = contact;
     }
 
     public Integer getId() {
@@ -44,57 +38,33 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getRound() {
-        return round;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRound(String round) {
-        this.round = round;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getContact() {
+        return contact;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public String getEducation() {
-        return education;
-    }
-
-    public void setEducation(String education) {
-        this.education = education;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     @Override
     public String toString() {
-        return "Student{" + "id=" + id + ", name=" + name + ", round=" + round + ", language=" + language + ", education=" + education + ", remark=" + remark + ", location=" + location + '}';
+        return "Student{" + "id=" + id + ", username=" + username + ", password=" + password + ", contact=" + contact + '}';
     }
 
 }

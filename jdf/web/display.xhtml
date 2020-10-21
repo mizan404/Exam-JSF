@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"></link>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    </h:head>
+    <h:body>
+        <div class="row justify-content-center align-items-center">
+            <h1>Display Data</h1>    
+        </div>
+        <hr/>
+        <div class="row justify-content-center align-items-center">
+            <h:form>
+                <table >
+                    <h:dataTable var="student1" value="#{studentContrioller.students}" class="table table-striped table-bordered table-striped">
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" class="">ID</f:facet >
+                                        #{student1.id}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Name</f:facet>
+                                        #{student1.name}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Round</f:facet>
+                                        #{student1.round}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Language</f:facet>
+                                        #{student1.language}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Education</f:facet>
+                                        #{student1.education}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Remark</f:facet>
+                                        #{student1.remark}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Location</f:facet>
+                                        #{student1.location}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <!--                        <tr>
+                                                    <td>
+                                                        <h:column>
+                                                            <f:facet name="header">Update</f:facet>
+                                                            <h:commandButton action="#{studentContrioller.displayUpdate(student1.id)}" value="Update" class="btn btn-primary"/>
+                                                        </h:column>
+                                                    </td>
+                                                    <td>
+                                                        <h:column>
+                                                            <f:facet name="header">Delete</f:facet>
+                                                            <h:commandButton action="#{studentContrioller.delete(student1.id)}" value="Delete" class="btn btn-danger"/>
+                                                        </h:column>
+                                                    </td>
+                                                </tr>-->
+                    </h:dataTable>
+                </table>
+            </h:form>
+        </div>
+
+    </h:body>
+</html>
+
