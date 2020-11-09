@@ -20,8 +20,7 @@ public class CustomTagTwo extends SimpleTagSupport {
     StringWriter sw = new StringWriter();
 
     @Override
-    public void doTag()
-            throws JspException, IOException {
+    public void doTag()throws JspException, IOException {
         getJspBody().invoke(sw);
         getJspContext().getOut().println(sw.toString());
     }

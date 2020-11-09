@@ -3,13 +3,8 @@
     Created on : Oct 23, 2020, 8:58:10 PM
     Author     : mohdm
 --%>
-<%--<%@taglib prefix="ex" uri="WEB-INF/tlds/custom.tld" %>
-<%@taglib prefix="exa" uri="WEB-INF/tlds/customtwo.tld" %>
-<%@taglib prefix="exam" uri="WEB-INF/tlds/customthree.tld" %>--%>
-<%@taglib uri="/WEB-INF/tlds/mycustomtag.tld" prefix="tag" %>
-<%@taglib uri="/WEB-INF/tlds/ch07.tld" prefix="ch07" %>
+<<<<<<< HEAD
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,14 +12,22 @@
         <title>JSP Page</title>
     </head>
     <body>
+<<<<<<< HEAD
 <!--                <ex:Hello/>
+=======
+                <ex:Hello/>
+>>>>>>> ce1dd93c73b43c0a74570d80f0e3481037cd63ed
                 <exa:Hello>
                     <h1>
                         This is message for rajaul chuthiyar jonno. 
                     </h1>
         
                 </exa:Hello>
+<<<<<<< HEAD
             <exam:Hello message="Mizan"/>-->
+=======
+            <exam:Hello message="Mizan"/>
+>>>>>>> ce1dd93c73b43c0a74570d80f0e3481037cd63ed
         <tag:mytag/>
 
 
