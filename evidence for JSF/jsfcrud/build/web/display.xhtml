@@ -32,7 +32,7 @@
                             <td>
                                 <h:column> 
                                     <f:facet name = "header" >Name</f:facet>
-                                        #{student1.name}
+                                        #{student1.username}
                                 </h:column>
                             </td>
                         </tr>
@@ -40,7 +40,7 @@
                             <td>
                                 <h:column> 
                                     <f:facet name = "header" >Round</f:facet>
-                                        #{student1.round}
+                                        #{student1.password}
                                 </h:column>
                             </td>
                         </tr>
@@ -48,48 +48,13 @@
                             <td>
                                 <h:column> 
                                     <f:facet name = "header" >Language</f:facet>
-                                        #{student1.language}
+                                        #{student1.contact}
                                 </h:column>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <h:column> 
-                                    <f:facet name = "header" >Education</f:facet>
-                                        #{student1.education}
-                                </h:column>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h:column> 
-                                    <f:facet name = "header" >Remark</f:facet>
-                                        #{student1.remark}
-                                </h:column>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h:column> 
-                                    <f:facet name = "header" >Location</f:facet>
-                                        #{student1.location}
-                                </h:column>
-                            </td>
-                        </tr>
-                        <!--                        <tr>
-                                                    <td>
-                                                        <h:column>
-                                                            <f:facet name="header">Update</f:facet>
-                                                            <h:commandButton action="#{studentContrioller.displayUpdate(student1.id)}" value="Update" class="btn btn-primary"/>
-                                                        </h:column>
-                                                    </td>
-                                                    <td>
-                                                        <h:column>
-                                                            <f:facet name="header">Delete</f:facet>
-                                                            <h:commandButton action="#{studentContrioller.delete(student1.id)}" value="Delete" class="btn btn-danger"/>
-                                                        </h:column>
-                                                    </td>
-                                                </tr>-->
+                
+                  
+                        
                     </h:dataTable>
                 </table>
             </h:form>
