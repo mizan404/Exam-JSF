@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>customthree</short-name>
+    <uri>/WEB-INF/tlds/customthree</uri>
+    <tlib-version>1.0</tlib-version>
+    <short-name>customtwo</short-name>
+    <uri>/WEB-INF/tlds/customtwo</uri>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>Example TLD with Body</short-name>
+    <tag>
+        <name>Hello</name>
+        <tag-class>com.mizanthecoder.CustomTagThree</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+    <attribute>
+        <name>message</name>
+    </attribute>
+</taglib>

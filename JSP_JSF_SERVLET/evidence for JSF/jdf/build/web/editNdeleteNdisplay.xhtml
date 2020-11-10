@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"></link>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    </h:head>
+    <h:body>
+        <div class="row justify-content-center align-items-center">
+            <h1>Display Edit And Delete Data</h1>    
+        </div>
+        <hr/>
+        <div class="row justify-content-center align-items-center">
+            <!--Update Data-->
+            <h:form>
+                <table>
+                    <tr>
+                        <td>
+                            <label>ID</label>
+                        </td>
+                        <td>
+                            <h:inputText value="#{studentContrioller.student.id}" size="35"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Name</label>
+                        </td>
+                        <td>
+                            <h:inputText value="#{studentContrioller.student.name}" size="35"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Round</label>
+                        </td>
+                        <td>
+                            <h:inputText value="#{studentContrioller.student.round}" size="35"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Language:  
+                        </td>
+                        <td>
+                            <h:selectOneMenu value="#{studentContrioller.student.language}" >
+                                <f:selectItem itemValue="Null" itemLabel="Select A Language"/>
+                                <f:selectItem itemValue="JAVA" itemLabel="JAVA"/>
+                                <f:selectItem itemValue="C#" itemLabel="C#"/>
+                                <f:selectItem itemValue="PHP" itemLabel="PHP"/>
+                            </h:selectOneMenu>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Education:  
+                        </td>
+                        <td >
+                            <h:selectManyCheckbox value="#{studentContrioller.student.education}" >
+                                <f:selectItem itemValue="SSC" itemLabel="SSC"/>
+                                <f:selectItem itemValue="HSC" itemLabel="HSC"/>
+                                <f:selectItem itemValue="BBA" itemLabel="BBA"/>
+                                <f:selectItem itemValue="MBA" itemLabel="MBA"/>
+                            </h:selectManyCheckbox>
+                        <!--<h:inputText value="#{studentContrioller.student.education}"/>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Remark:  
+                        </td>
+                        <td >
+                            <h:inputTextarea value="#{studentContrioller.student.remark}"/>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Location:  
+                        </td>
+                        <td >
+                            <h:selectOneRadio value="#{studentContrioller.student.location}">
+                                <f:selectItem itemValue="Dhaka" itemLabel="Dhaka"/>
+                                <f:selectItem itemValue="Khulna" itemLabel="Khulna"/>
+                                <f:selectItem itemValue="Sylhet" itemLabel="Sylhet"/>
+                                <f:selectItem itemValue="Rajshahi" itemLabel="Rajshahi"/>
+                            </h:selectOneRadio>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <h:commandButton action="#{studentContrioller.updateStudent()}" value="Update" class="btn btn-primary" onclick="if (!confirm('Are you sure you want to delete this student?'))
+                                        return false"/>
+
+                            <h:outputText value="#{studentContrioller.result}"/>
+
+                        </td>
+                    </tr>
+                </table>
+            </h:form>
+        </div>
+        <hr/>
+        <div class="row justify-content-center align-items-center" >
+            <!--Display Data-->
+            <h:form>
+                <table >
+                    <h:dataTable var="student1" value="#{studentContrioller.students}" class="table table-striped table-bordered table-hover">
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" class="">ID</f:facet >
+                                        #{student1.id}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column > 
+                                    <f:facet name = "header" >Name</f:facet>
+                                        #{student1.name}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Round</f:facet>
+                                        #{student1.round}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Language</f:facet>
+                                        #{student1.language}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Education</f:facet>
+                                        #{student1.education}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Remark</f:facet>
+                                        #{student1.remark}
+                                </h:column>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:column> 
+                                    <f:facet name = "header" >Location</f:facet>
+                                        #{student1.location}
+                                </h:column>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h:column>
+                                    <f:facet name="header">Select for Update</f:facet>
+                                    <h:commandButton action="#{studentContrioller.displayUpdate(student1.id)}" value="Select for Update" class="btn btn-primary" />
+                                </h:column>
+                            </td>
+                            <td>
+                                <h:column>
+                                    <f:facet name="header">Delete</f:facet>
+                                    <h:commandButton action="#{studentContrioller.delete(student1.id)}" onclick="if (!confirm('Are you sure you want to delete this student?'))
+                                                return false" value="Delete" class="btn btn-danger"/>
+
+                                </h:column>
+                            </td>
+                        </tr>
+                    </h:dataTable>
+                </table>
+            </h:form>
+        </div>
+
+    </h:body>
+</html>
+
