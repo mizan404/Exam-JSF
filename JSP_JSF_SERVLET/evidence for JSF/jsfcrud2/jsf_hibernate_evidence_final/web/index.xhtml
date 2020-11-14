@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </h:head>
+    <h:body style="background-color: white">
+        <div style="float: left; width: 49%; height: auto; background: white; padding: 5px;">
+            <h:form>
+                <table>
+                    <tr>
+                        <td><label>Name</label></td>
+                        <td><h:inputText value="#{traineeController.trainee.name}"></h:inputText></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Email</label></td>
+                        <td><h:inputText value="#{traineeController.trainee.email}"></h:inputText></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Gender</label></td>
+                        <td>
+                            <h:selectOneRadio value="#{traineeController.trainee.gender}">
+                                <f:selectItem itemValue="Male" itemLabel="Male"></f:selectItem>
+                                <f:selectItem itemValue="Female" itemLabel="Female"></f:selectItem>
+                            </h:selectOneRadio>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Round</label></td>
+                        <td>
+                            <h:selectOneMenu value="#{traineeController.trainee.round}">
+                                <f:selectItem itemValue="Select A Round" itemLabel="Select A Round" />
+                                <f:selectItem itemValue="41" itemLabel="41" />
+                                <f:selectItem itemValue="42" itemLabel="42" />
+                                <f:selectItem itemValue="43" itemLabel="43" />
+                                <f:selectItem itemValue="44" itemLabel="44" />
+                                <f:selectItem itemValue="45" itemLabel="45" />
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Completed Course</label></td>
+                        <td><h:selectManyCheckbox value="#{traineeController.completedCourses}">                   
+                                <f:selectItem itemValue="PPT" itemLabel="PPT" />
+                                <f:selectItem itemValue="Java" itemLabel="Java" />
+                                <f:selectItem itemValue="Nt" itemLabel="Nt" />
+                                <f:selectItem itemValue="SQL" itemLabel="SQL" />
+                                <f:selectItem itemValue="JS" itemLabel="JS" />
+                            </h:selectManyCheckbox> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Remark</label></td>
+                        <td><h:inputTextarea value="#{traineeController.trainee.remark}"></h:inputTextarea></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><h:commandButton action="#{traineeController.savetrainee()}" value="Save" style="width: 130px; padding: 8px"/>
+                            <h:outputText value="#{traineeController.result}"/>
+                        </td>                       
+                    </tr>
+                </table>
+            </h:form>
+        </div>
+
+
+
+        <div style="float: left; width: 49%; height: auto; background: white; padding: 5px">
+            <h:form>
+                <table>
+                    <tr>
+                        <td><label>Id</label></td>
+                        <td><h:inputText value="#{traineeController.trainee.id}"></h:inputText></td>
+                    </tr>
+                    <tr>
+                        <td><label>Name</label></td>
+                        <td><h:inputText value="#{traineeController.trainee.name}"></h:inputText></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Email</label></td>
+                        <td><h:inputText value="#{traineeController.trainee.email}"></h:inputText></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Gender</label></td>
+                        <td>
+                            <h:selectOneRadio value="#{traineeController.trainee.gender}">
+                                <f:selectItem itemValue="Male" itemLabel="Male"></f:selectItem>
+                                <f:selectItem itemValue="Female" itemLabel="Female"></f:selectItem>
+                            </h:selectOneRadio>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Round</label></td>
+                        <td>
+                            <h:selectOneMenu value="#{traineeController.trainee.round}">
+                                <f:selectItem itemValue="Select A Round" itemLabel="Select A Round" />
+                                <f:selectItem itemValue="41" itemLabel="41" />
+                                <f:selectItem itemValue="42" itemLabel="42" />
+                                <f:selectItem itemValue="43" itemLabel="43" />
+                                <f:selectItem itemValue="44" itemLabel="44" />
+                                <f:selectItem itemValue="45" itemLabel="45" />
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Completed Course</label></td>
+                        <td><h:selectManyCheckbox value="#{traineeController.completedCourses}">                   
+                                <f:selectItem itemValue="PPT" itemLabel="PPT" />
+                                <f:selectItem itemValue="Java" itemLabel="Java" />
+                                <f:selectItem itemValue="Nt" itemLabel="Nt" />
+                                <f:selectItem itemValue="SQL" itemLabel="SQL" />
+                                <f:selectItem itemValue="JS" itemLabel="JS" />
+                            </h:selectManyCheckbox> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Remark</label></td>
+                        <td><h:inputTextarea value="#{traineeController.trainee.remark}"></h:inputTextarea></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><h:commandButton action="#{traineeController.updateTrainee()}" value="Update" style="width: 130px; padding: 8px"/>
+                            <h:outputText value="#{traineeController.result}"/>
+                        </td>
+
+                    </tr>
+                </table>
+            </h:form>
+        </div>
+
+        <div style="width: 0.8; float: left; background: white; margin-left: 90px; padding: 20px">
+            <h2 style="text-align: center">Display Data</h2><hr/>
+            <h:form>
+                <h:dataTable var="tar" value="#{traineeController.trainees}">
+
+                    <h:column class="data_dis">
+                        <f:facet name="header">Id</f:facet>
+                            #{tar.id}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                            #{tar.name}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Email</f:facet>
+                            #{tar.email}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Gender</f:facet>
+                            #{tar.gender}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Round</f:facet>
+                            #{tar.round}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Completed Course</f:facet>
+                            #{tar.completedCourse}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Remark</f:facet>
+                            #{tar.remark}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Update</f:facet>
+                        <h:commandButton action="#{traineeController.displayUpdate(tar.id)}" value="Update" 
+                                         class="btn btn-primary" style="width: 80px;"></h:commandButton>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{traineeController.deleteTrainee(tar.id)}" value="Delete"
+                                         class="btn btn-denger" style="width: 80px;"></h:commandButton>
+                    </h:column>
+
+                </h:dataTable>
+            </h:form>
+        </div>                       
+    </h:body>
+</html>
+
