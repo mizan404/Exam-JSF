@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * @author mohdm
  */
 @Entity
-@Table(name = "student")
+@Table(name = "student1")
 public class Student {
 
     @Id

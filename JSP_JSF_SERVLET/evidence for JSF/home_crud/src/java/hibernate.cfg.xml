@@ -51,6 +51,6 @@ Contributor(s):
     <property name="hibernate.connection.pool_size">10</property>
     <property name="show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
-    <mapping class="com.mizanthecoder.Student" />
+    <mapping class="com.mizanthecoder.Student" />    
   </session-factory>
 </hibernate-configuration>

@@ -10,21 +10,21 @@
 
     </h:head>
     <h:body>
-        <div class="row justify-content-center align-items-center" style="width: 100%">
+        <div class="row justify-content-center align-items-center">
             <h1>Save</h1>
         </div>
-        </hr>
-        <div class="row justify-content-center align-items-center" style="float: left; width: 49%">
+        <hr></hr>
+        <div class="row justify-content-center align-items-center">
 
             <h:form>
                 <table>
                     <tr>
                         <td>Name:</td>
-                        <td><h:inputText value="#{studentController.student.name}"</td>
+                        <td><h:inputText value="#{studentController.student.name}"/></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><h:inputText value="#{studentController.student.email}"</td>
+                        <td><h:inputText value="#{studentController.student.email}"/></td>
                     </tr>
                     <tr>
                         <td>Gender:</td>
@@ -35,6 +35,45 @@
                             </h:selectOneRadio>
                         </td>
                     </tr>
+                    <tr>
+                        <td>Round:</td>
+                        <td>
+                            <h:selectOneMenu value="#{studentController.student.round}">
+                                <f:selectItem itemValue="41" itemLabel="41"/>
+                                <f:selectItem itemValue="42" itemLabel="42"/>
+                                <f:selectItem itemValue="43" itemLabel="43"/>
+                                <f:selectItem itemValue="44" itemLabel="44"/>
+                                <f:selectItem itemValue="45" itemLabel="45"/>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td>Completed Course:</td>
+                            <td>
+                                <h:selectManyCheckbox value="#{studentController.completeCourses}">
+                                    <f:selectItem itemValue="Java" itemLabel="Java"/>
+                                    <f:selectItem itemValue="PHP" itemLabel="PHP"/>
+                                    <f:selectItem itemValue="DDD" itemLabel="DDD"/>
+                                    <f:selectItem itemValue="C#" itemLabel="C#"/>
+                                    <f:selectItem itemValue="Net" itemLabel="Net"/>
+                                </h:selectManyCheckbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Remark:</td>
+                            <td>
+                                <h:inputTextarea value="#{studentController.student.remark}">
+                                </h:inputTextarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h:commandButton action="#{studentController.save()}" value="Save"/>
+
+                            </td>
+                            <td>
+                                <h:outputText value="#{studentController.result}"/>
+                            </td>
+                        </tr>
                 </table>
             </h:form>
         </div>

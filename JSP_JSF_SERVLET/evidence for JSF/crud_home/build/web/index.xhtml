@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div style="float: left; width: 100%">
+            <h1>Exam</h1>
+        </div>
+        <hr/>
+        <div style="float: left; width: 49%; height: auto; background: white; padding: 5px" >
+            <h:form>
+                <table>
+
+                    <tr>
+                        <td>Id:</td>
+                        <td><h:inputText value="#{controller.student.id}" /></td>
+                    </tr>
+                    <tr>
+                        <td>Username:</td>
+                        <td><h:inputText value="#{controller.student.username}"/> </td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><h:inputText value="#{controller.student.email}"/> </td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><h:inputText value="#{controller.student.password}" /> </td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td><h:selectOneRadio value="#{controller.student.gender}">
+                                <f:selectItem itemValue="Male" itemLabel="Male"/>
+                                <f:selectItem itemValue="Female" itemLabel="Female"/>
+                            </h:selectOneRadio> </td>
+                    </tr>
+                    <tr>
+                        <td>Location:</td>
+                        <td><h:selectOneMenu value="#{controller.student.location}">
+                                <f:selectItem itemValue="Dhaka" itemLabel="Dhaka"/>
+                                <f:selectItem itemValue="Sylhet" itemLabel="Sylhet"/>
+                            </h:selectOneMenu> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Education:</td>
+                        <td><h:selectManyCheckbox value="#{controller.education}">
+                                <f:selectItem itemValue="Java" itemLabel="Java"/>
+                                <f:selectItem itemValue="DDD" itemLabel="DDD"/>
+                            </h:selectManyCheckbox>  </td>
+                    </tr>
+                    <tr>
+                        <td><h:commandButton action="#{controller.save()}" value="Save"/> </td>
+                        <td><h:commandButton action="#{controller.update()}" value="Update"/> </td>
+                        <td>
+                            <h:outputText value="#{controller.result}"/>
+                        </td>
+
+                    </tr>
+
+
+                </table>
+            </h:form>
+        </div>
+
+        <div style="float: left; width: 49%; height: auto; background: white; padding: 5px">
+            <h:form>
+                <h:dataTable var="student" value="#{controller.students}">
+                    <h:column>
+                        <f:facet name="header">Id</f:facet>
+                            #{student.id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Username</f:facet>
+                            #{student.username}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Email</f:facet>
+                            #{student.email}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Password</f:facet>
+                            #{student.password}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Gender</f:facet>
+                            #{student.gender}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Location</f:facet>
+                            #{student.location}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Education</f:facet>
+                            #{student.education}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Update</f:facet>
+                        <h:commandButton action="#{controller.displayUpdate(student.id)}" value="Update"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{controller.delete(student.id)}" value="Delete" />
+                    </h:column>
+
+                </h:dataTable>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
