@@ -1,0 +1,17 @@
+Create Environment of Node Js 
+
+1.	Install Node js LTS version.
+2.	Then check the version in cmd> node –v
+3.	Then install the angularJs package in cmd> npm install –g @cli@6.0.0
+4.	Then create a project in cmd> ng new project_name
+5.	Then solve the error problem related to rxjs vesioning by editing 			package.json file from the created package. After then delete the 			ng.psi file from localdisk/users/appdata/roaming/npm
+		
+6.	Then go again in cmd and type> cd space project_location_link
+
+ 	................Then follow the sequence below from cmd.............
+	
+7.	C:\Users\Mr. Ahsun Habib\Desktop\FirstProject>npm install 
+8.	C:\Users\Mr. Ahsun Habib\Desktop\FirstProject>ng serve --open
+9.	Now you will see the Angular Welcome page in your browser.
+10.	Information rearranged By Khandaker Ahsun and Safayet Zahid
+11.	For related info Contact: 01308-166502
