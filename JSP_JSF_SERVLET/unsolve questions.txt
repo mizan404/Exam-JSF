@@ -1,5 +1,4 @@
-01. Which of the following proving that a third party hasn’t modified information
-while it was in transit
+01. Which of the following proving that a third party hasn’t modified information while it was in transit
 a) Authentication
 b) Access control for resources
 c) Data integrity //correct
